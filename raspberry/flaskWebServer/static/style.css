@@ -1,0 +1,4 @@
+/* se importan todos los archivos .css */
+@import "basic.css";
+@import "main.css";
+@import "buttons.css";

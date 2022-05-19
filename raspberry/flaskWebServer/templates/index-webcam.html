@@ -1,0 +1,9 @@
+<!-- Aquí simplemente se muestra el streaming de la cámara hosteado en flask para luego se llamado como un iframe desde el html principal -->
+<html>
+  <head>
+    <title>Streaming webcam</title>
+  </head>
+  <body>
+    <img id="bg" width="100%" height="100%" src="{{ url_for('video_feed') }}">
+  </body>
+</html>

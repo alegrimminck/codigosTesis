@@ -1,0 +1,44 @@
+/* Estilización de el contenido principal */
+main {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 50px 20% 0 20%;
+}
+
+.holder {
+	position: relative;
+}
+
+.maps-data #text {
+	margin: 20px;
+	line-height: 30px;
+}
+
+/* Media query para el responsivo */
+@media only screen and (max-width: 1000px) {
+	body {
+		font-size: 4vw;
+	}
+	
+	main {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.webcam {
+		width: 100vw;
+		height: 80vw;
+	}
+
+	.maps-data {
+		display: flex;
+		flex-direction: row;
+		margin-top: 35rem;
+	}
+	
+	.maps-data iframe {
+		width: 50vw;
+		height: 50vw;
+	}
+}

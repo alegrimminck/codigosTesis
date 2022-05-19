@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Import JQuery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!--Import SocketIO-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"></script>
+    <meta charset="utf-8">
+    
+    <!--Import main.js-->
+    <script src="../static/main.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
+    
+    <title>Remote control car</title>
+  </head>
+  
+  <body>
+    <main>
+        
+      <!-- contenedor con el iframe de webcam y los botones para el control de movimiento del carro y del pan tilt -->
+        <div class="holder">
+
+            <!-- iframe webcam el cual toma el streaming de la misma dirección pero está hosteada en otro puerto -->
+            <iframe class="webcam"
+              width="800px"
+              height="600px"
+              style="border:0"
+              loading="lazy"
+              allowfullscreen
+              src="http://192.168.100.127:8081">
+            </iframe>
+            
+            <!-- Contenedor de ambos joystick para estilarlos -->
+            <div class="buttons-container">
+                <div class="directional-buttons">
+                    <button id="btnF" value="F" class="direction-button up"><span class="visually-hidden">up</span></button>
+                    <button id="btnL" value="L" class="direction-button left"><span class="visually-hidden">left</span></button>
+                    <button id="btnR" value="R" class="direction-button right"><span class="visually-hidden">right</span></button>
+                    <button id="btnB" value="B" class="direction-button down"><span class="visually-hidden">down</span></button>
+                </div>
+                
+                <div class="directional-buttons">
+                    <button id="btnV" value="V" class="direction-button up blue"><span class="visually-hidden">up</span></button>
+                    <button id="btnW" value="W" class="direction-button left blue"><span class="visually-hidden">left</span></button>
+                    <button id="btnU" value="U" class="direction-button right blue"><span class="visually-hidden">right</span></button>
+                    <button id="btnX" value="X" class="direction-button down blue"><span class="visually-hidden">down</span></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- API de maps para mostrar la ubicación actual de el robot -->
+        <div class="maps-data">
+            <iframe
+                id="maps"
+                width="400"
+                height="300"
+                style="border:0"
+                loading="lazy"
+                allowfullscreen
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDq_MXrxxllKLv5Ck-t9uV18ydNnbviTyU&q=Space+Needle,Seattle+WA">
+            </iframe>
+            
+            <!-- contenedor vació para luego agregar texto dinámico desde JS -->
+            <div id="text"></div>
+        </div>
+    
+    </main>
+  </body>
+</html>
